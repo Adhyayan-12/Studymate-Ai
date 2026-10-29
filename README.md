@@ -1,50 +1,79 @@
-# 🎈 Streamlit + LLM Examples App
+# 📚 StudyMate AI
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)
+### Your Personal AI-Powered Study Assistant
 
-Starter examples for building LLM apps with Streamlit.
+StudyMate AI is a document-based learning application designed to help students work with their study materials. Upload a PDF, text file, or Markdown document, extract its contents, and ask questions to get clear, student-friendly explanations powered by an AI language model.
 
-## Overview of the App
+## ✨ Features
 
-This app showcases a growing collection of LLM minimum working examples.
+- **PDF text extraction:** Extract readable text from PDF study materials using `pypdf`.
+- **Multiple file formats:** Upload PDF, TXT, and Markdown files.
+- **Document Q&A:** Ask questions about uploaded study materials.
+- **AI-powered explanations:** Generate answers using Anthropic's Claude API.
+- **Text preview:** Review extracted document content without an API key.
+- **Error handling:** Display helpful messages when documents contain no extractable text or something goes wrong.
 
-Current examples include:
+## 🛠️ Built With
 
-- Chatbot
-- File Q&A
-- Chat with Internet search
-- LangChain Quickstart
-- LangChain PromptTemplate
-- Chat with user feedback
+- Python
+- Streamlit
+- pypdf
+- Anthropic API
 
-## Demo App
+## 🚀 Getting Started
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://llm-examples.streamlit.app/)
+### Prerequisites
 
-### Get an OpenAI API key
+- Python 3.12 or a compatible version
+- An Anthropic API key to generate AI answers
 
-You can get your own OpenAI API key by following the following instructions:
+### Installation
 
-1. Go to https://platform.openai.com/account/api-keys.
-2. Click on the `+ Create new secret key` button.
-3. Next, enter an identifier name (optional) and click on the `Create secret key` button.
+Clone the repository:
 
-### Enter the OpenAI API key in Streamlit Community Cloud
-
-To set the OpenAI API key as an environment variable in Streamlit apps, do the following:
-
-1. At the lower right corner, click on `< Manage app` then click on the vertical "..." followed by clicking on `Settings`.
-2. This brings the **App settings**, next click on the `Secrets` tab and paste the API key into the text box as follows:
-
-```sh
-OPENAI_API_KEY='xxxxxxxxxx'
+```bash
+git clone https://github.com/Adhyayan-12/llm-examples.git
+cd llm-examples
 ```
 
-## Run it locally
+Install the dependencies:
 
-```sh
-virtualenv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-streamlit run Chatbot.py
+```bash
+python -m pip install -r requirements.txt
 ```
+
+Run StudyMate AI:
+
+```bash
+python -m streamlit run "pages/1_File_Q&A.py"
+```
+
+For an isolated environment, create and activate a Python virtual environment before installing dependencies.
+
+## 🔐 API Configuration
+
+Document extraction and text preview work without an API key. AI-generated answers require a valid Anthropic API key, entered in the application's sidebar.
+
+**Security note:** Never publish API keys, passwords, or other secrets in your repository.
+
+## ⚠️ Limitations
+
+- Scanned PDFs may require OCR to extract text from images.
+- AI-generated answers require a valid API key and access to the configured Anthropic model.
+- Long documents are truncated before being sent to the AI model.
+
+## 👨‍💻 Developer
+
+**Adhyayan Singh**  
+B.Tech Computer Science Student | Aspiring Software Developer
+
+- **GitHub Profile:** [@Adhyayan-12](https://github.com/Adhyayan-12)
+- **Project Repository:** [StudyMate AI — PDF Study Assistant](https://github.com/Adhyayan-12/llm-examples)
+
+## 📄 Acknowledgments & Open-Source Attribution
+
+StudyMate AI is a customized learning and development project built using Python and Streamlit, with the [Streamlit LLM Examples](https://github.com/streamlit/llm-examples) repository as its starting point.
+
+My contributions include adapting the File Q&A application into a study-focused interface, implementing PDF text extraction using `pypdf`, supporting PDF, TXT, and Markdown uploads, adding document text previews, and integrating Anthropic's API for AI-powered question answering.
+
+This project is maintained for learning, experimentation, and portfolio development. The original project's authors are acknowledged, and the applicable license and attribution notices are retained in accordance with its licensing requirements.
